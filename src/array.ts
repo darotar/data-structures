@@ -59,4 +59,19 @@ export class Arr<T> {
 
     return result;
   }
+
+  public [Symbol.iterator](): Iterator<T> {
+    let idx = 0;
+    const self = this;
+
+    return {
+      next(): IteratorResult<T> {
+        if (idx < self.length) {
+          return { value: self.store[idx++], done: false };
+        } else {
+          return { value: undefined as any, done: true };
+        }
+      },
+    };
+  }
 }
