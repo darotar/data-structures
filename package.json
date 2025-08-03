@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "description": "A collection of TypeScript data structures (lists, maps, trees, etc.)",
   "main": "dist/index.js",
+  "type": "module",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc -b",
+    "build": "tsc",
     "clean": "rm -rf dist",
     "prepare": "yarn build",
     "test": "echo \"No tests configured\" && exit 0"
