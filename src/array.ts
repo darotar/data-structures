@@ -13,8 +13,8 @@ export class Arr<T> {
     return this._length;
   }
 
-  public map<U>(fn: (val: T, index: number) => U): U[] {
-    const result: U[] = [];
+  public map<U>(fn: (val: T, index: number) => U): Arr<U> {
+    const result = new Arr<U>();
     let i = 0;
 
     while (i < this.length) {
@@ -36,7 +36,27 @@ export class Arr<T> {
     }
   }
 
+  public push(val: T) {
+    this.store[this.length] = val;
+
+    return ++this._length;
+  }
+
   public reduce() {}
 
   public flatMap() {}
+
+  public filter(fn: (val: T, index: number) => boolean): Arr<T> {
+    const result = new Arr<T>();
+
+    let i = 0;
+
+    while (i < this.length) {
+      if (fn(this.store[i], i)) result.push(this.store[i]);
+
+      i++;
+    }
+
+    return result;
+  }
 }
