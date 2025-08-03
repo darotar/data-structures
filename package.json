@@ -1,0 +1,29 @@
+{
+  "name": "@aprokhorov/data-structures",
+  "version": "0.1.0",
+  "description": "A collection of TypeScript data structures (lists, maps, trees, etc.)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rm -rf dist",
+    "prepare": "yarn build",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darotar/data-structures.git"
+  },
+  "author": "darotar fabledva@mail.ru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darotar/data-structures/issues"
+  },
+  "homepage": "https://github.com/darotar/data-structures#readme",
+  "devDependencies": {
+    "typescript": "5.9.2"
+  }
+}
